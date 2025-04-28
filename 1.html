@@ -1,24 +1,17 @@
-document.addEventListener('DOMContentLoaded', async function() {
-    // Initialize Supabase client
-    const SUPABASE_URL = 'https://abcd.supabase.co'; // your real URL
-    const SUPABASE_KEY = 'your-anon-key'; // your real anon key
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+<head>
+    <meta charset="UTF-8">
+    <title>Page 1</title>
 
-    // Log a page visit
-    async function logPageVisit(pageName) {
-        console.log('Logging visit to', pageName);
-        const { error } = await supabase
-            .from('page_visits')
-            .insert([{ page: pageName, timestamp: new Date().toISOString() }]);
+    <!-- Load Supabase library first -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
 
-        if (error) {
-            console.error('Error inserting to Supabase:', error.message);
-        } else {
-            console.log('Logged successfully');
-        }
-    }
+    <!-- Load your script AFTER -->
+    <script src="script.js" defer></script>
 
-    // Now that supabase is initialized, call it
-    const pageName = document.title || window.location.pathname;
-    await logPageVisit(pageName);
-});
+    <!-- Inline script AFTER all scripts -->
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            logPageVisit('Page 1');
+        });
+    </script>
+</head>
