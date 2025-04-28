@@ -1,8 +1,8 @@
 // script.js
 
 // Initialize your Supabase client
-const SUPABASE_URL = 'https://YOUR-SUPABASE-URL.supabase.co';
-const SUPABASE_KEY = 'YOUR-PUBLIC-ANON-KEY'; // safe for frontend use
+const supabaseUrl = 'https://uqsfqzutpateuyuzpswi.supabase.co'
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxc2ZxenV0cGF0ZXV5dXpwc3dpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU4NDY4NjAsImV4cCI6MjA2MTQyMjg2MH0.pLEmpvMgLm1tQPbH1-fENP5Nab7FL7lEozLNMFaQSzw'; // safe for frontend use
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Function to log a page visit
